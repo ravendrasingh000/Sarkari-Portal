@@ -1,0 +1,74 @@
+<div class="vacancy-item">
+
+    <style>
+        .vacancy-item {
+            margin-bottom: 15px;
+        }
+
+        .vacancy-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            border-radius: 12px;
+            background: #ffffff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .vacancy-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .vacancy-title {
+            font-weight: 600;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .badge-status {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: white;
+        }
+
+        .active { background: #28a745; }
+        .closed { background: #dc3545; }
+        .upcoming { background: #ffc107; color: black; }
+
+        .view-link {
+            text-decoration: none;
+        }
+    </style>
+
+    <a href="/{{ doc.route }}" class="view-link">
+
+        <div class="vacancy-card">
+
+            <!-- Title -->
+            <div>
+                <div class="vacancy-title">
+                    {{ doc.vacancy_title or doc.title or doc.name }}
+                </div>
+
+                <small>📅 Last Date: {{ doc.last_date }}</small>
+            </div>
+
+            <!-- Status Badge -->
+            <div>
+                <span class="badge-status 
+                    {% if doc.status == 'Active' %}active
+                    {% elif doc.status == 'Closed' %}closed
+                    {% else %}upcoming
+                    {% endif %}">
+                    {{ doc.status }}
+                </span>
+            </div>
+
+        </div>
+
+    </a>
+
+</div>

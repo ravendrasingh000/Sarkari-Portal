@@ -1,0 +1,312 @@
+{
+ "actions": [],
+ "allow_guest_to_view": 1,
+ "allow_rename": 1,
+ "autoname": "prompt",
+ "creation": "2026-03-23 13:02:58.388828",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_information_section",
+  "vacancy_title",
+  "column_break_rnaq",
+  "department_name",
+  "column_break_ygdf",
+  "post_name",
+  "column_break_mwnv",
+  "total_posts",
+  "important_dates_section",
+  "notification_date",
+  "column_break_nxju",
+  "start_date",
+  "column_break_kokr",
+  "last_date",
+  "column_break_gicz",
+  "exam_date",
+  "application_fee_section",
+  "general_fee",
+  "column_break_itqm",
+  "obc_fee",
+  "column_break_mcbh",
+  "scst_fee",
+  "eligibility_section",
+  "minimum_qualification",
+  "column_break_utje",
+  "age_limit",
+  "age_relaxation",
+  "location_section",
+  "job_location",
+  "column_break_hllj",
+  "state",
+  "important_links_section",
+  "notification_pdf",
+  "column_break_newc",
+  "apply_link",
+  "column_break_cswv",
+  "official_website",
+  "description_section",
+  "full_description",
+  "status_section",
+  "status",
+  "vacancy_post_details_section",
+  "vacancy_post_details",
+  "other_details_section",
+  "route",
+  "published"
+ ],
+ "fields": [
+  {
+   "fieldname": "basic_information_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Information"
+  },
+  {
+   "fieldname": "vacancy_title",
+   "fieldtype": "Data",
+   "label": "Vacancy Title"
+  },
+  {
+   "fieldname": "column_break_rnaq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "department_name",
+   "fieldtype": "Data",
+   "label": "Department Name"
+  },
+  {
+   "fieldname": "column_break_ygdf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "post_name",
+   "fieldtype": "Data",
+   "label": "Post Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_mwnv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_posts",
+   "fieldtype": "Int",
+   "label": "Total Posts"
+  },
+  {
+   "fieldname": "important_dates_section",
+   "fieldtype": "Section Break",
+   "label": "Important Dates"
+  },
+  {
+   "fieldname": "notification_date",
+   "fieldtype": "Date",
+   "label": "Notification Date"
+  },
+  {
+   "fieldname": "column_break_nxju",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "column_break_kokr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_date",
+   "fieldtype": "Date",
+   "label": "Last Date"
+  },
+  {
+   "fieldname": "column_break_gicz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "exam_date",
+   "fieldtype": "Date",
+   "label": "Exam Date"
+  },
+  {
+   "fieldname": "application_fee_section",
+   "fieldtype": "Section Break",
+   "label": "Application Fee"
+  },
+  {
+   "fieldname": "general_fee",
+   "fieldtype": "Currency",
+   "label": "General Fee"
+  },
+  {
+   "fieldname": "column_break_itqm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "obc_fee",
+   "fieldtype": "Currency",
+   "label": "OBC Fee"
+  },
+  {
+   "fieldname": "column_break_mcbh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "scst_fee",
+   "fieldtype": "Currency",
+   "label": "SC/ST Fee"
+  },
+  {
+   "fieldname": "eligibility_section",
+   "fieldtype": "Section Break",
+   "label": "Eligibility"
+  },
+  {
+   "fieldname": "minimum_qualification",
+   "fieldtype": "Small Text",
+   "label": "Minimum Qualification"
+  },
+  {
+   "fieldname": "column_break_utje",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "age_limit",
+   "fieldtype": "Data",
+   "label": "Age Limit"
+  },
+  {
+   "fieldname": "age_relaxation",
+   "fieldtype": "Small Text",
+   "label": "Age Relaxation"
+  },
+  {
+   "fieldname": "location_section",
+   "fieldtype": "Section Break",
+   "label": "Location"
+  },
+  {
+   "fieldname": "job_location",
+   "fieldtype": "Data",
+   "label": "Job Location"
+  },
+  {
+   "fieldname": "column_break_hllj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fieldname": "important_links_section",
+   "fieldtype": "Section Break",
+   "label": "Important Links"
+  },
+  {
+   "fieldname": "notification_pdf",
+   "fieldtype": "Attach",
+   "label": "Notification PDF"
+  },
+  {
+   "fieldname": "column_break_newc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "apply_link",
+   "fieldtype": "Data",
+   "label": "Apply Link"
+  },
+  {
+   "fieldname": "column_break_cswv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "official_website",
+   "fieldtype": "Data",
+   "label": "Official Website"
+  },
+  {
+   "fieldname": "description_section",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "full_description",
+   "fieldtype": "Text Editor",
+   "label": "Full Description"
+  },
+  {
+   "fieldname": "status_section",
+   "fieldtype": "Section Break",
+   "label": "Status"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nUpcoming\nActive\nClosed"
+  },
+  {
+   "fieldname": "vacancy_post_details_section",
+   "fieldtype": "Section Break",
+   "label": "Vacancy Post Details"
+  },
+  {
+   "fieldname": "vacancy_post_details",
+   "fieldtype": "Table",
+   "label": "Vacancy Post Details",
+   "options": "Vacancy Post Details"
+  },
+  {
+   "fieldname": "other_details_section",
+   "fieldtype": "Section Break",
+   "label": "Other details"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "route"
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "published"
+  }
+ ],
+ "grid_page_length": 50,
+ "has_web_view": 1,
+ "index_web_pages_for_search": 1,
+ "is_published_field": "published",
+ "links": [],
+ "modified": "2026-03-23 14:28:57.285763",
+ "modified_by": "Administrator",
+ "module": "sarkari_portal",
+ "name": "Government Vacancy",
+ "naming_rule": "Set by user",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "route": "route",
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

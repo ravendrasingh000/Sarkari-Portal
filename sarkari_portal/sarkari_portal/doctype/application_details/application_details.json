@@ -1,0 +1,232 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-03-21 14:14:22.856554",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "application_details_section",
+  "applicant_name",
+  "phone_number",
+  "column_break_ijrs",
+  "father_name",
+  "email",
+  "column_break_qidp",
+  "date_of_birth",
+  "address",
+  "education_section",
+  "10th_marksheet",
+  "computer_diploma",
+  "column_break_rojo",
+  "12th_marksheet",
+  "other_diploma",
+  "column_break_owmw",
+  "graduation",
+  "documents_section",
+  "aadhaar_card",
+  "signature",
+  "column_break_qlqf",
+  "pan_card",
+  "column_break_gowx",
+  "photo",
+  "other_details_section",
+  "previous_registration_number",
+  "cast_certificate",
+  "column_break_gxxi",
+  "vacancy_name",
+  "column_break_oofw",
+  "category",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "application_details_section",
+   "fieldtype": "Section Break",
+   "label": " Basic Details"
+  },
+  {
+   "fieldname": "applicant_name",
+   "fieldtype": "Data",
+   "label": "Applicant Name"
+  },
+  {
+   "fieldname": "column_break_ijrs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_qidp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number"
+  },
+  {
+   "fieldname": "father_name",
+   "fieldtype": "Data",
+   "label": "Father Name"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date Of Birth"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address "
+  },
+  {
+   "fieldname": "education_section",
+   "fieldtype": "Section Break",
+   "label": "Education"
+  },
+  {
+   "fieldname": "10th_marksheet",
+   "fieldtype": "Attach",
+   "label": "10th Marksheet"
+  },
+  {
+   "fieldname": "computer_diploma",
+   "fieldtype": "Attach",
+   "label": "Computer Diploma"
+  },
+  {
+   "fieldname": "column_break_rojo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "12th_marksheet",
+   "fieldtype": "Attach",
+   "label": "12th Marksheet"
+  },
+  {
+   "fieldname": "other_diploma",
+   "fieldtype": "Attach",
+   "label": "Other Diploma"
+  },
+  {
+   "fieldname": "column_break_owmw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "graduation",
+   "fieldtype": "Attach",
+   "label": "Graduation"
+  },
+  {
+   "fieldname": "documents_section",
+   "fieldtype": "Section Break",
+   "label": "Documents"
+  },
+  {
+   "fieldname": "aadhaar_card",
+   "fieldtype": "Attach",
+   "label": "Aadhaar Card"
+  },
+  {
+   "fieldname": "signature",
+   "fieldtype": "Attach",
+   "label": "Signature"
+  },
+  {
+   "fieldname": "column_break_qlqf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pan_card",
+   "fieldtype": "Attach",
+   "label": "PAN Card"
+  },
+  {
+   "fieldname": "column_break_gowx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "photo",
+   "fieldtype": "Attach",
+   "label": "Photo"
+  },
+  {
+   "fieldname": "other_details_section",
+   "fieldtype": "Section Break",
+   "label": "Other Details"
+  },
+  {
+   "fieldname": "previous_registration_number",
+   "fieldtype": "Data",
+   "label": "Previous Registration Number"
+  },
+  {
+   "fieldname": "vacancy_name",
+   "fieldtype": "Data",
+   "label": "Vacancy Name"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "label": "Category",
+   "options": "GEN\nOBC\nSC\nST"
+  },
+  {
+   "fieldname": "cast_certificate",
+   "fieldtype": "Attach",
+   "label": "Cast Certificate"
+  },
+  {
+   "fieldname": "column_break_gxxi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_oofw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Application Details",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-03-23 14:15:37.784137",
+ "modified_by": "Administrator",
+ "module": "sarkari_portal",
+ "name": "Application Details",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

@@ -1,0 +1,267 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+    :root {
+        --neon-green: #00ff88;
+        --neon-blue: #00d2ff;
+        --neon-purple: #9d50bb;
+        --dark-bg: #050505;
+    }
+
+    body {
+        background-color: var(--dark-bg);
+        font-family: 'Poppins', sans-serif;
+        color: #fff;
+        overflow-x: hidden;
+    }
+
+    /* Container Full Width */
+    .ultra-wrapper {
+        width: 100% !important;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+
+    /* Heading Style */
+    .main-title {
+        font-family: 'Orbitron', sans-serif;
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        text-align: center;
+        background: linear-gradient(to right, #00d2ff, #9d50bb, #00ff88);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 900;
+        letter-spacing: 5px;
+        margin-bottom: 40px;
+        text-transform: uppercase;
+        animation: titleGlow 3s infinite alternate;
+    }
+
+    @keyframes titleGlow {
+        from { filter: drop-shadow(0 0 10px rgba(0,210,255,0.5)); }
+        to { filter: drop-shadow(0 0 30px rgba(157,80,187,0.8)); }
+    }
+
+    /* Ultra Wide Search Bar */
+    .search-section {
+        margin-bottom: 60px;
+        display: flex;
+        justify-content: center;
+    }
+    .search-box {
+        width: 100%;
+        max-width: 1100px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 2px solid rgba(255,255,255,0.1);
+        border-radius: 100px;
+        padding: 20px 40px 20px 80px;
+        font-size: 1.4rem;
+        color: white;
+        backdrop-filter: blur(20px);
+        transition: 0.5s;
+        box-shadow: inset 0 0 20px rgba(255,255,255,0.05);
+    }
+    .search-box:focus {
+        outline: none;
+        border-color: var(--neon-blue);
+        box-shadow: 0 0 30px rgba(0, 210, 255, 0.3);
+        background: rgba(255, 255, 255, 0.07);
+    }
+
+    /* --- ULTRA WIDE CARDS --- */
+    .vacancy-list {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column for maximum width */
+        gap: 30px;
+        width: 100%;
+    }
+
+    .vacancy-card {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: 0.8s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .vacancy-card.show { opacity: 1; transform: translateX(0); }
+
+    .card-inner {
+        background: linear-gradient(145deg, rgba(20,20,20,0.9), rgba(40,40,40,0.8));
+        border-radius: 30px;
+        padding: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid rgba(255,255,255,0.1);
+        position: relative;
+        overflow: hidden;
+        transition: 0.4s ease;
+        cursor: pointer;
+    }
+
+    /* Status based border highlight */
+    .card-inner.active-border { border-left: 10px solid var(--neon-green); box-shadow: -10px 0 20px rgba(0, 255, 136, 0.2); }
+    .card-inner.closed-border { border-left: 10px solid #ff4b2b; }
+    .card-inner.upcoming-border { border-left: 10px solid #f9d423; }
+
+    .card-inner:hover {
+        transform: scale(1.015);
+        background: rgba(50,50,50,0.9);
+        border-color: var(--neon-blue);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 20px rgba(0, 210, 255, 0.2);
+    }
+
+    /* Card Content Layout */
+    .content-main { flex: 2; }
+    .content-meta { flex: 1; padding: 0 30px; border-left: 1px solid rgba(255,255,255,0.1); border-right: 1px solid rgba(255,255,255,0.1); }
+    .content-action { flex: 0.8; text-align: right; padding-left: 30px; }
+
+    .job-title {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #fff;
+        text-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
+
+    .dept-name {
+        font-size: 1.2rem;
+        color: var(--neon-blue);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+
+    .meta-item {
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        color: #ccc;
+    }
+    .meta-item i { margin-right: 15px; color: var(--neon-green); font-size: 1.3rem; }
+
+    /* Interactive View Button */
+    .btn-details {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+        color: white !important;
+        padding: 18px 35px;
+        border-radius: 100px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: 0.4s;
+        border: none;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        width: 100%;
+    }
+    .btn-details:hover {
+        letter-spacing: 2px;
+        box-shadow: 0 0 30px rgba(0, 210, 255, 0.6);
+        transform: translateY(-5px);
+    }
+
+    /* Responsive for Tablet/Mobile */
+    @media (max-width: 992px) {
+        .card-inner { flex-direction: column; text-align: center; }
+        .content-meta { border: none; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 20px; width: 100%; }
+        .content-action { width: 100%; padding: 0; }
+    }
+</style>
+
+<div class="ultra-wrapper">
+    <h1 class="main-title">Govt Vacancies 2026</h1>
+
+    <!-- 🔍 Search -->
+    <div class="search-section">
+        <div style="position: relative; width: 100%; max-width: 1100px;">
+            <i class="fa fa-search" style="position: absolute; left: 30px; top: 50%; transform: translateY(-50%); font-size: 1.5rem; color: var(--neon-blue);"></i>
+            <input type="text" id="searchInput" class="search-box" placeholder="Start typing job title, department or status...">
+        </div>
+    </div>
+
+    {% set vacancies = frappe.get_all("Government Vacancy", 
+        filters={"published": 1}, 
+        fields=["name", "vacancy_title", "route", "last_date", "status", "department_name"],
+        order_by="creation desc"
+    ) %}
+
+    <div class="vacancy-list" id="vacancyList">
+        {% for v in vacancies %}
+        <div class="vacancy-card">
+            <!-- Pura card ab clickable hai -->
+            <div class="card-inner {% if v.status == 'Active' %}active-border{% elif v.status == 'Closed' %}closed-border{% else %}upcoming-border{% endif %}" onclick="window.location.href='/{{ v.route }}'">
+                
+                <!-- 1. Job Info -->
+                <div class="content-main">
+                    <div class="dept-name">{{ v.department_name }}</div>
+                    <h2 class="job-title">{{ v.vacancy_title }}</h2>
+                    <span style="font-size: 0.9rem; background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 20px;">
+                        <i class="fas fa-tag me-2"></i> {{ v.status }}
+                    </span>
+                </div>
+
+                <!-- 2. Meta Details -->
+                <div class="content-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-hourglass-half"></i>
+                        <span>Deadline: <b>{{ v.last_date }}</b></span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Location: All India</span>
+                    </div>
+                </div>
+
+                <!-- 3. Action Button -->
+                <div class="content-action">
+                    <a href="/{{ v.route }}" class="btn-details">
+                        View Details <i class="fas fa-chevron-right ms-3"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Entrance Animation
+        const cards = document.querySelectorAll('.vacancy-card');
+        cards.forEach((card, index) => {
+            setTimeout(() => {
+                card.classList.add('show');
+            }, index * 150);
+        });
+
+        // Live Search Filter
+        document.getElementById("searchInput").addEventListener("keyup", function() {
+            let value = this.value.toLowerCase();
+            let items = document.getElementsByClassName("vacancy-card");
+            
+            for (let i = 0; i < items.length; i++) {
+                let text = items[i].innerText.toLowerCase();
+                if (text.includes(value)) {
+                    items[i].style.display = "block";
+                    items[i].style.opacity = "1";
+                } else {
+                    items[i].style.display = "none";
+                    items[i].style.opacity = "0";
+                }
+            }
+        });
+    });
+</script>
+
+{% endblock %}
