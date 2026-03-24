@@ -52,7 +52,9 @@
   "vacancy_post_details",
   "other_details_section",
   "route",
-  "published"
+  "published",
+  "payment_section_section",
+  "qr_code"
  ],
  "fields": [
   {
@@ -276,6 +278,16 @@
    "fieldname": "published",
    "fieldtype": "Check",
    "label": "published"
+  },
+  {
+   "fieldname": "payment_section_section",
+   "fieldtype": "Section Break",
+   "label": "Payment Section"
+  },
+  {
+   "fieldname": "qr_code",
+   "fieldtype": "Attach",
+   "label": "QR Code"
   }
  ],
  "grid_page_length": 50,
@@ -283,7 +295,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2026-03-23 14:28:57.285763",
+ "modified": "2026-03-24 11:50:44.286181",
  "modified_by": "Administrator",
  "module": "sarkari_portal",
  "name": "Government Vacancy",
